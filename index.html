@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watermark</title>
+    <link rel="stylesheet" type="text/css" href="css/simple-grid.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+</head>
+<body>
+    <!-- Loading -->
+    <div class="loader-cover"></div>
+    <div class="lds-ellipsis loader"><div></div><div></div><div></div><div></div></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1>Watermark your photos easily</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form class="form" action='/merge' method="POST">
+                    <div>
+                        <div>
+                            <label for="original">Original photo :</label>
+                            <input type="file" name="original" accept="image/*" multiple required/>
+                        </div>
+                        <div>
+                            <label for="watermark">Watermark photo :</label>
+                            <input type="file" name="watermark" accept="image/*" required/>
+                        </div>
+                    </div>
+                    
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h3 id="download-title" class="hidden">Download watermarked photos :</h3>
+                <a id="download-link" class="hidden"></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

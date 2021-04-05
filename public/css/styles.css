@@ -1,0 +1,165 @@
+html,body{
+    background-color: #0e83cd;
+}
+
+*{
+    outline: none;
+    color: whitesmoke;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+.form > div{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.form > div div{
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.form label{
+    font-size: 1.2em;
+}
+
+.form button{
+    position: relative;
+    display: block;
+    margin: 3em auto;
+    appearance: none;
+    border: none;
+    background: #0e83cd;
+    color: white;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border: 4px solid whitesmoke;
+    padding: .5em 2em;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition: .2s;
+}
+
+.form button:hover{
+    color: #0e83cd;
+}
+
+.form button::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0%;
+    height: 150%;
+    background-color: whitesmoke;
+    transform: translate(-50%, -50%) skew(40deg) rotate(355deg);
+    overflow: hidden;
+    z-index: -1;
+    transition: .2s;
+}
+
+.form button:hover::before{
+    width: 100%;
+}
+
+/* LOADING */
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+
+.loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    display: none;
+}
+.loader-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(27, 27, 27, .4);
+    z-index: 98;
+    display: none;
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+#download-link{
+  text-align: center;
+  font-size: 1.3em;
+  background-color: #2ecc71;
+  border: 2px solid whitesmoke;
+  padding: .3em 1em;
+  margin-bottom: 3em;
+}
