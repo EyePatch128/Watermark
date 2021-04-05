@@ -9,7 +9,7 @@ function updateDownloadLink(url){
     a.href = url;
 
     const name = url.split("/")[url.split("/").length-1];
-    a.download = name;
+    a.download = `${name}.zip`;
     a.innerHTML = name;
 }
 

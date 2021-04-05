@@ -101,20 +101,7 @@ app.post("/merge", upload.fields([{name: "original"}, {name:"watermark"}]), (req
 
     watermarkFiles(req.files, dirID)
         .then(()=>{
-            // const output = fs.createWriteStream(zipPath)
             const archive = archiver("zip")
-        
-            // output.on('close', function () {
-            //     console.log(archive.pointer() + ' total bytes');
-            //     console.log('archiver has been finalized and the output file descriptor has closed.');
-            //     fs.rmdir(`tmp/${dirID}`, { recursive: true }, (err) => {
-            //         if (err) {
-            //             throw err;
-            //         }
-                
-            //         console.log(`tmp/${dirID} is deleted!`);
-            //     });
-            // });
         
             archive.on('error', function(err){
                 throw err;
